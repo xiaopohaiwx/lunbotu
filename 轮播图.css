@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0}
+body{background: gainsboro}
+ul{list-style: none}
+section{width: 300px; height: 200px; margin: 100px auto;
+    position: relative; overflow: hidden;
+}
+
+section #imgs{width: 1800px; height: 200px; position: absolute; top: 0; left: 0; display: flex;}
+/* section #imgs a{float: left;} */
+
+section #list{width: 180px; height: 20px; position: absolute;
+    left: 60px; top: 160px;
+}
+section #list ul{display: flex; justify-content: space-around}
+section #list li{background: #000; color: #fff; 
+    border-radius: 50%; width: 20px; height: 20px; line-height: 20px; text-align: center;
+    cursor: pointer;
+}
+section #list li.on{background: #fff; color: #000;}
