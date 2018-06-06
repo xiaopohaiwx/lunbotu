@@ -2,6 +2,8 @@ var imgs = document.getElementById("imgs");
 var lis = document.getElementsByTagName("li");
 var t1 = null; //定义一个定时器变量
 var init = 0; // 定义一个变量表示第几张图片
+var left = document.getElementById("left");
+var right = document.getElementById("right");
 //第一种定时方法：
 var t1 = setInterval(function(){    //设置定时器
     init++;
@@ -69,12 +71,35 @@ for(var k = 0; k < lis.length; k++)
         imgs.style.left = init * -300 + 'px';
     }
 }
-lis.onmouseout = function()
+
+right.onclick = function()
 {
-    start();
+    clearInterval(t1);
+    init++;
+    init %= 6;
+    imgs.style.left = init * -300 + 'px';
+    for(var n = 0; n < 6; n++)
+    {
+        lis[n].className = "";
+    }
+    lis[init].className = "on";
 }
 
-
+left.onclick = function()
+{
+    clearInterval(t1);
+    init--;
+    if(init < 0)
+    {
+        init = 5;
+    }
+    imgs.style.left = init * -300 + 'px';
+    for(var x = 0; x < 6; x++)
+    {
+        lis[x].className = "";
+    }
+    lis[init].className = "on";
+}
 
 
 
